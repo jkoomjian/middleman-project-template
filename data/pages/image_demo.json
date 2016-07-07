@@ -1,0 +1,10 @@
+{
+  "name": "image_demo",
+  "title": "Fell Swoop Image Demo",
+  "body_class": "img_demo_content",
+  "sections": [
+    {
+      "template": "carousel"
+    }
+  ]
+}
