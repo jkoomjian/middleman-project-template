@@ -1,6 +1,8 @@
 {
   "name": "image_demo",
   "title": "Fell Swoop Image Demo",
+  "header": "templates/components/header-empty",
+  "skip_container": "true",
   "body_class": "img_demo_content",
   "sections": [
     {
