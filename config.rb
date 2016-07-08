@@ -122,25 +122,38 @@ helpers do
 
     i = 0
     Dir.glob("#{img_dir}/*.jpg") do |filepath|
-      html << "\n<li data-target='#fs-carousel' data-slide-to='#{i}' class='#{ i == 0 ? 'active' : ''}'></li>"
+      html += "\n<li data-target='#fs-carousel' data-slide-to='#{i}' class='#{ i == 0 ? 'active' : ''}'></li>"
       i += 1
     end
 
-    html << "\n</ol>"
+    html += "\n</ol>"
 
     # Slides
-    html << "\n<div class='carousel-inner' role='listbox'>"
+    html += "\n<div class='carousel-inner' role='listbox'>"
 
     i = 0
     Dir.glob("#{img_dir}/*.jpg") do |filepath|
       filename = filepath.split('/')[-1]
-      html << "\n<div class='item #{ i == 0 ? 'active' : ''}'>"
-      html << "\n<img src='/images/carousel/#{filename}' />"
-      html << "\n</div>"
+      html += "\n<div class='item #{ i == 0 ? 'active' : ''}'>"
+      html += "\n<img src='/images/carousel/#{filename}' />"
+      html += "\n</div>"
       i += 1
     end
 
-    html << "\n</div>"
+    html += "\n</div>"
+
+    return html
+  end
+
+  def image_grid_html
+    html = ""
+
+    img_dir = File.join(root, "/source/images/image_grid")
+    Dir.glob("#{img_dir}/*.jpg") do |filepath|
+      html += "<div class=\"img-wrapper\">\n"
+      html += "<img src=\"/images/image_grid/#{filepath.split('/')[-1]}\" />\n"
+      html += "</div>"
+    end
 
     return html
   end

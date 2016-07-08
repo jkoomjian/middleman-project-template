@@ -2,11 +2,14 @@
   "name": "image_demo",
   "title": "Fell Swoop Image Demo",
   "header": "templates/components/header-empty",
-  "skip_container": "true",
+  "container_fluid": "true",
   "body_class": "img_demo_content",
   "sections": [
     {
       "template": "carousel"
+    },
+    {
+      "template": "image_grid"
     }
   ]
 }
