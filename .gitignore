@@ -24,3 +24,6 @@ node_modules/
 build/
 theme1/
 theme2/
+
+.tags
+.tags1

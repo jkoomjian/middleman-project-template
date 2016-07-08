@@ -1,5 +1,7 @@
 # vendor
 //= require jquery/dist/jquery
+//= require bootstrap-sass/assets/javascripts/bootstrap.min
+
 # end vendor
 
 # project wide js
