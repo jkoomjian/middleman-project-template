@@ -114,6 +114,37 @@ helpers do
     return "<a href='#{href}' class='#{classes}' #{data_attrs}>#{data}</a>"
   end
 
+  def carousel_image_html
+    img_dir = File.join(root, "/source/images/carousel")
+
+    # Indicators
+    html = "<ol class='carousel-indicators'>"
+
+    i = 0
+    Dir.glob("#{img_dir}/*.jpg") do |filepath|
+      html << "\n<li data-target='#fs-carousel' data-slide-to='#{i}' class='#{ i == 0 ? 'active' : ''}'></li>"
+      i += 1
+    end
+
+    html << "\n</ol>"
+
+    # Slides
+    html << "\n<div class='carousel-inner' role='listbox'>"
+
+    i = 0
+    Dir.glob("#{img_dir}/*.jpg") do |filepath|
+      filename = filepath.split('/')[-1]
+      html << "\n<div class='item #{ i == 0 ? 'active' : ''}'>"
+      html << "\n<img src='/images/carousel/#{filename}' />"
+      html << "\n</div>"
+      i += 1
+    end
+
+    html << "\n</div>"
+
+    return html
+  end
+
 end
 
 ###

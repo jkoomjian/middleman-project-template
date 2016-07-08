@@ -1,22 +1,6 @@
 #fs-carousel.carousel.slide{"data-ride" => "carousel"}
 
-  / Indicators
-  %ol.carousel-indicators
-    %li.active{"data-slide-to" => "0", "data-target" => "#fs-carousel"}
-    %li{"data-slide-to" => "1", "data-target" => "#fs-carousel"}
-    %li{"data-slide-to" => "2", "data-target" => "#fs-carousel"}
-    %li{"data-slide-to" => "3", "data-target" => "#fs-carousel"}
-
-  / Wrapper for slides
-  .carousel-inner{:role => "listbox"}
-    .item.active
-      %img{:src => "#{images_path}/carousel/candy1.jpg"}
-    .item
-      %img{:src => "#{images_path}/carousel/candy2.jpg"}
-    .item
-      %img{:src => "#{images_path}/carousel/candy3.jpg"}
-    .item
-      %img{:src => "#{images_path}/carousel/candy4.jpg"}
+  = carousel_image_html
 
   / Controls
   %a.left.carousel-control{"data-slide" => "prev", :href => "#fs-carousel", :role => "button"}
